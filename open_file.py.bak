@@ -23,14 +23,14 @@ class _DupFd(object):
         return forkserver.get_inherited_fds()[self.ind]
 
 #
-# Start child process using a server process
+# Start child prong a server process
 #
 
 class Popen(popen_fork.Popen):
     method = 'forkserver'
     DupFd = _DupFd
 
-    def __init__(self, process_obj):
+    def __in, process_obj):
         self._fds = []
         super().__init__(process_obj)
 
